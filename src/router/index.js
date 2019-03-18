@@ -4,6 +4,7 @@ router.beforeEach((to, from, next) => {
   iView.LoadingBar.start()
   let isLogin = false
   isLogin = sessionStorage.getItem('isLogin')
+  isLogin = true
   if (isLogin) {
     next()
   } else {

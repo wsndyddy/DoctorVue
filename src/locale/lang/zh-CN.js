@@ -1,5 +1,14 @@
 export default {
   home: '首页',
+  leftMenu: {
+    menu1: '待检',
+    menu2: '已检',
+    menu3: '报告',
+    menu4: '校准',
+    menu5: '设置',
+    menu6: '帮助',
+    tip: '正常'
+  },
   copyright: {
     year: '2019',
     name: '先通康桥',

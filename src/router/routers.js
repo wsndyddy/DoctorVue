@@ -11,10 +11,19 @@ import User from '@/components/user/user'
 import Config from '@/components/config/config'
 import About from '@/components/about'
 import Nopage from '@/components/not_found'
+import help from '@/components/help'
 Vue.use(Router)
 
 const routerConfig = new Router({
   routes: [
+    {
+      path: '/help',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: help
+    },
     {
       path: '/',
       name: 'main',
