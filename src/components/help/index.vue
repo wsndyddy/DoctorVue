@@ -5,61 +5,26 @@
       <div class="ypub_box">
         <div class="ypub_top">
           <div class="ypub_title">
-            <img src="../../assets/title_help.png" /><i>操作手册</i>
+            <img src="../../assets/title_help.png" /><i>{{$t('help.bread')}}</i>
           </div>
-          <div class="ypub_return">返回</div>
+          <div class="ypub_return" @click="route.back()">{{$t('help.btn')}}</div>
         </div>
         <div class="y_operation clearfix">
           <div class="yo_sider">
-            <dl>
-              <dt>1. 触诊操作</dt>
-              <dd>
+            <dl v-for="(item,index) in helpMenu" :key="index">
+              <dt @click="toggleMenu(index)">{{index+1}}. {{item.title}}</dt>
+              <dd v-if="item.isShow">
                 <ul>
-                  <li>1.1 探头使用</li>
-                  <li>1.2 探头校准</li>
-                  <li>1.3 病灶使用</li>
-                </ul>
-              </dd>
-            </dl>
-            <dl>
-              <dt>2. 异常处理</dt>
-              <dd>
-                <ul>
-                  <li>2.1 比如比如</li>
-                  <li>2.2 比如比如</li>
-                  <li>2.3 比如比如</li>
-                </ul>
-              </dd>
-            </dl>
-            <dl>
-              <dt>3. 操作流程</dt>
-              <dd>
-                <ul>
-                  <li>3.1 比如比如</li>
-                  <li>3.2 比如比如</li>
-                  <li>3.3 比如比如</li>
-                </ul>
-              </dd>
-            </dl>
-            <dl>
-              <dt>4. 系统配置</dt>
-              <dd>
-                <ul>
-                  <li>4.1 比如比如</li>
-                  <li>4.2 比如比如</li>
-                  <li>4.3 比如比如</li>
+                  <li @click="showDetail(`${index+1}.${ind+1} ${itm.title}`)" v-for="(itm,ind) in item.child" :key="ind">{{index+1}}.{{ind+1}} {{itm.title}}</li>
                 </ul>
               </dd>
             </dl>
           </div>
           <div class="yo_main">
-            <h1>1.1 探头使用</h1>
+            <h1>{{content.title}}</h1>
             <dl>
-              <p>　　Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
-              <p>　　Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
-              <p>　　Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
-              <p>　　Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
-            </dl>
+              <p>{{content.desc}}</p>
+             </dl>
           </div>
         </div>
       </div>
@@ -69,19 +34,92 @@
 
 <script>
 import leftMenu from '../leftMenu'
+import { get } from '@/libs/util'
 export default {
   name: 'help',
   data () {
     return {
-
+      helpMenu: [],
+      content: {
+        title: '探头使用',
+        desc: '动态内容'
+      }
     }
   },
   components: {
     leftMenu
+  },
+  mounted () {
+    this.getMenuInfo()
+  },
+  methods: {
+    showDetail (title) { // 展示文章内容
+      this.content.title = title
+      let url = ''
+      get(url, {}).then(res => {})
+    },
+    toggleMenu (index) { // 展示
+      this.helpMenu.forEach(item => {
+        item.isShow = false
+      })
+      this.helpMenu[index].isShow = true
+    },
+    getMenuInfo () {
+      this.helpMenu = [{
+        title: '触诊操作',
+        isShow: true,
+        child: [{
+          title: '探头使用'
+        },
+        {
+          title: '探头校准'
+        },
+        {
+          title: '病灶使用'
+        }]
+      },
+      {
+        title: '异常处理',
+        isShow: false,
+        child: [{
+          title: '探头使用'
+        },
+        {
+          title: '探头校准'
+        },
+        {
+          title: '病灶使用'
+        }]
+      },
+      {
+        title: '操作流程',
+        isShow: false,
+        child: [{
+          title: '探头使用'
+        },
+        {
+          title: '探头校准'
+        },
+        {
+          title: '病灶使用'
+        }]
+      },
+      {
+        title: '系统配置',
+        isShow: false,
+        child: [{
+          title: '探头使用'
+        },
+        {
+          title: '探头校准'
+        },
+        {
+          title: '病灶使用'
+        }]
+      }]
+      let url = ''
+      get(url, {}).then(res => {})
+    }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

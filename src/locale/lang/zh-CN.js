@@ -1,5 +1,9 @@
 export default {
   home: '首页',
+  help: {
+    bread: '操作手册',
+    btn: '返回'
+  },
   leftMenu: {
     menu1: '待检',
     menu2: '已检',

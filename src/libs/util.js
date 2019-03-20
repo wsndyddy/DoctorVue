@@ -2,6 +2,7 @@
 // cookie保存的天数
 import config from '@/config'
 import { forEach, hasOneOf, objEqual } from '@/libs/tools'
+import axios from 'axios'
 
 const { title, useI18n } = config
 
@@ -399,4 +400,31 @@ export const setTitle = (routeItem, vm) => {
   const pageTitle = showTitle(handledRoute, vm)
   const resTitle = pageTitle ? `${title} - ${pageTitle}` : title
   window.document.title = resTitle
+}
+export const get = function (url, params = {}) {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(url, {
+        params: params
+      })
+      .then(response => {
+        resolve(response.data)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}
+
+export const post = function (url, data = {}) {
+  return new Promise((resolve, reject) => {
+    axios.post(url, data).then(
+      response => {
+        resolve(response.data)
+      },
+      err => {
+        reject(err)
+      }
+    )
+  })
 }
