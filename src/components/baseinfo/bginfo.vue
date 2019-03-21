@@ -1,58 +1,34 @@
 <template>
   <div class="y_container">
-    <!--<leftMenu></leftMenu>-->
+    <leftMenu></leftMenu>
     <div class="y_main">
       <div class="ypub_box">
         <div class="ypub_top">
           <div class="ypub_title">
-            <img src="../../assets/title_help.png" /><i>{{$t('help.bread')}}</i>
+            <img src="../../assets/title_base.png" /><i>{{$t('baseinfo.bread')}}</i>
           </div>
         </div>
         <div class="ylist_square">
           <dl class="col_half">
             <dt>{{$t('baseinfo.marriageStatus.title')}}</dt>
-            <ul>
-              <li>{{$t('baseinfo.marriageStatus.is')}}</li>
-              <li>{{$t('baseinfo.marriageStatus.no')}}</li>
-            </ul>
+            <radio :labelarr="marriage"></radio>
           </dl>
           <dl class="col_half">
             <dt>{{$t('baseinfo.marriageHistory.title')}}</dt>
-            <ul>
-              <li>{{$t('baseinfo.marriageHistory.is')}}</li>
-              <li>{{$t('baseinfo.marriageHistory.no')}}</li>
-            </ul>
+            <radio :labelarr="marriageHistory"></radio>
           </dl>
           <dl>
             <dt>{{$t('baseinfo.culture.title')}}</dt>
-            <ul>
-              <li>{{$t('baseinfo.culture.status1')}}</li>
-              <li>{{$t('baseinfo.culture.status2')}}</li>
-              <li>{{$t('baseinfo.culture.status3')}}</li>
-              <li>{{$t('baseinfo.culture.status4')}}</li>
-              <li>{{$t('baseinfo.culture.status5')}}</li>
-            </ul>
+            <radio :labelarr="culture"></radio>
           </dl>
           <dl>
             <dt>{{$t('baseinfo.occupation.title')}}</dt>
-            <ul>
-              <li>{{$t('baseinfo.occupation.name1')}}</li>
-              <li>{{$t('baseinfo.occupation.name2')}}</li>
-              <li>{{$t('baseinfo.occupation.name3')}}</li>
-              <li>{{$t('baseinfo.occupation.name4')}}</li>
-              <li>{{$t('baseinfo.occupation.name5')}}</li>
-              <li>{{$t('baseinfo.occupation.name6')}}</li>
-              <li>{{$t('baseinfo.occupation.name7')}}</li>
-              <li>{{$t('baseinfo.occupation.name8')}}</li>
-              <li>{{$t('baseinfo.occupation.name9')}}</li>
-              <li>{{$t('baseinfo.occupation.name10')}}</li>
-              <li>{{$t('baseinfo.occupation.name11')}}</li>
-            </ul>
+            <radio :labelarr="occupation"></radio>
           </dl>
         </div>
         <div class="ylist_optionbox">
           <dl>
-            <dt></dt>
+            <dt>{{$t('baseinfo.time.title')}}</dt>
             <dd>
               <h2>
                 <ul>
@@ -153,16 +129,105 @@
 
 <script>
 import leftMenu from '../leftMenu'
+import radio from '@/components/baseinfo/radio'
 import { get } from '@/libs/util'
 export default {
   name: 'bginfo',
   data () {
     return {
-      helpMenu: []
+      marriage: [
+        {
+          Active: false,
+          label: this.$t('baseinfo.marriageStatus.is')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.marriageStatus.no')
+        }
+      ],
+      marriageHistory: [
+        {
+          Active: false,
+          label: this.$t('baseinfo.marriageHistory.is')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.marriageHistory.no')
+        }
+      ],
+      culture: [
+        {
+          Active: false,
+          label: this.$t('baseinfo.culture.status1')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.culture.status2')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.culture.status3')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.culture.status4')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.culture.status5')
+        }
+      ],
+      occupation: [
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name1')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name2')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name3')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name4')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name5')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name6')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name7')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name8')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name9')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name10')
+        },
+        {
+          Active: false,
+          label: this.$t('baseinfo.occupation.name11')
+        }
+      ]
     }
   },
   components: {
-    leftMenu
+    leftMenu,
+    radio
   },
   mounted () {
     this.getMenuInfo()

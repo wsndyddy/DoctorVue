@@ -1,6 +1,7 @@
 export default {
   home: '首页',
   baseinfo: {
+    bread: '基础信息',
     btnPrev: '上一步',
     btnnext: '下一步',
     marriageStatus: {
