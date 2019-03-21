@@ -1,5 +1,59 @@
 export default {
   home: '首页',
+  baseinfo: {
+    btnPrev: '上一步',
+    btnnext: '下一步',
+    marriageStatus: {
+      title: '婚姻状况',
+      is: '已婚',
+      no: '未婚'
+    },
+    marriageHistory: {
+      title: '离婚史',
+      is: '无',
+      no: '有，何时离婚'
+    },
+    culture: {
+      title: '文化程度',
+      status1: '博士',
+      status2: '硕士',
+      status3: '大学',
+      status4: '高中',
+      status5: '初中及小学'
+    },
+    occupation: {
+      title: '职业',
+      name1: '农民',
+      name2: '工人',
+      name3: '教师',
+      name4: '公务员',
+      name5: '个体经营者',
+      name6: '司机',
+      name7: '服务生',
+      name8: '公司职员',
+      name9: '家庭主妇',
+      name10: '医护人员',
+      name11: '学生'
+    },
+    time: {
+      title: '末次月经时间',
+      year: '年',
+      month: '月',
+      day: '日'
+    },
+    cycle: {
+      title: '月经周期',
+      day: '日'
+    },
+    rule: {
+      title: '月经规律',
+      day: '日'
+    },
+    age: {
+      title: '月经初潮年龄',
+      day: '岁'
+    }
+  },
   help: {
     bread: '操作手册',
     btn: '返回'

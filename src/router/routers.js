@@ -12,10 +12,30 @@ import Config from '@/components/config/config'
 import About from '@/components/about'
 import Nopage from '@/components/not_found'
 import help from '@/components/help'
+import bginfo from '@/components/baseinfo/bginfo'
 Vue.use(Router)
-
 const routerConfig = new Router({
   routes: [
+    {
+      path: '/base',
+      name: 'base',
+      meta: {
+        notCache: true
+      },
+      component: bginfo,
+      children: [
+        {
+          path: '/base/bginfo',
+          name: 'bginfo',
+          meta: {
+            title: '背景情况-基础信息',
+            notCache: true,
+            icon: 'md-home'
+          },
+          component: bginfo
+        }
+      ]
+    },
     {
       path: '/help',
       name: 'main',
