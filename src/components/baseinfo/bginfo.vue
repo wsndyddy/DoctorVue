@@ -208,34 +208,15 @@ export default {
       }
     },
     'yjTime.day' () {
-      let arr = [1, 3, 5, 7, 9]
-      let that = this
-      arr.forEach(item => {
-        if (item === that.yjTime.month) {
-          if (that.yjTime.day >= 31) {
-            debugger
-            that.yjTime.day = 31
-            return false
-          }
-        }
-      })
-      debugger
-      if (this.yjTime.month === 2) {
-        if (this.yjTime.year % 4) {
-          if (this.yjTime.day > 28) {
-            this.yjTime.day = 28
-            return false
-          }
+      if (!this.judegeBigMonth()) {
+        if (this.yjTime.month === 2) {
+          this.dealFebruary()
         } else {
-          if (this.yjTime.day > 29) {
-            this.yjTime.day = 29
+          if (this.yjTime.day > 30) {
+            this.yjTime.day = 30
             return false
           }
         }
-      }
-      if (this.yjTime.day > 30) {
-        this.yjTime.day = 30
-        return false
       }
     }
   },
@@ -244,6 +225,32 @@ export default {
     this.getYearMonthDay()
   },
   methods: {
+    judegeBigMonth () {
+      let arr = [1, 3, 5, 7, 9]
+      let that = this
+      arr.forEach(item => {
+        if (item === that.yjTime.month) {
+          if (that.yjTime.day >= 31) {
+            that.yjTime.day = 31
+            return false
+          }
+        }
+      })
+      return true
+    },
+    dealFebruary () { //  处理二月份
+      if (this.yjTime.year % 4) {
+        if (this.yjTime.day > 28) {
+          this.yjTime.day = 28
+          return false
+        }
+      } else {
+        if (this.yjTime.day > 29) {
+          this.yjTime.day = 29
+          return false
+        }
+      }
+    },
     getYearMonthDay () {
       let date = new Date()
       this.time.year = date.getFullYear()
