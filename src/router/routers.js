@@ -13,10 +13,26 @@ import About from '@/components/about'
 import Nopage from '@/components/not_found'
 import help from '@/components/help'
 import bginfo from '@/components/baseinfo/bginfo'
+import SysCommon from '@/components/sysCommon'
+import SysCheckImage from '@/components/sysCheckImage'
+import SysFocusDescribe from '@/components/sysFocusDescribe'
+import SysReportTemplate from '@/components/sysReportTemplate'
+import SysReport from '@/components/sysReport'
+import PersonalSetup from '@/components/personalSetup'
+import PersonalManage from '@/components/personalManage'
+import TemplateV1 from '@/components/templateV1'
+import TemplateV2 from '@/components/templateV2'
+import BackDrugs from '@/components/backDrugs'
+import BackHabits from '@/components/BackHabits'
+import BackFamily from '@/components/backFamily'
+import BackBaseinfo from '@/components/backBaseinfo'
+import BreastCancer from '@/components/breastCancer'
+
 Vue.use(Router)
+
 const routerConfig = new Router({
   routes: [
-    {
+  {
       path: '/base',
       name: 'base',
       meta: {
@@ -35,6 +51,126 @@ const routerConfig = new Router({
           component: bginfo
         }
       ]
+    },
+    {
+      path: '/help',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: help
+    },
+    {
+      path: '/breastCancer',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: BreastCancer
+    },
+    {
+      path: '/backBaseinfo',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: BackBaseinfo
+    },
+    {
+      path: '/backFamily',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: BackFamily
+    },
+    {
+      path: '/backHabits',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: BackHabits
+    },
+    {
+      path: '/backDrugs',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: BackDrugs
+    },
+    {
+      path: '/templateV2',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: TemplateV2
+    },
+    {
+      path: '/templateV1',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: TemplateV1
+    },
+    {
+      path: '/personalManage',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: PersonalManage
+    },
+    {
+      path: '/personalSetup',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: PersonalSetup
+    },
+    {
+      path: '/sysReport',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: SysReport
+    },
+    {
+      path: '/sysReportTemplate',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: SysReportTemplate
+    },
+    {
+      path: '/sysFocusDescribe',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: SysFocusDescribe
+    },
+    {
+      path: '/sysCheckImage',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: SysCheckImage
+    },
+    {
+      path: '/sysCommon',
+      name: 'main',
+      meta: {
+        notCache: true
+      },
+      component: SysCommon
     },
     {
       path: '/help',
