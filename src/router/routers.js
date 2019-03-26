@@ -25,14 +25,13 @@ import TemplateV2 from '@/components/templateV2'
 import BackDrugs from '@/components/backDrugs'
 import BackHabits from '@/components/BackHabits'
 import BackFamily from '@/components/backFamily'
-import BackBaseinfo from '@/components/backBaseinfo'
 import BreastCancer from '@/components/breastCancer'
 
 Vue.use(Router)
 
 const routerConfig = new Router({
   routes: [
-  {
+    {
       path: '/base',
       name: 'base',
       meta: {
@@ -68,14 +67,7 @@ const routerConfig = new Router({
       },
       component: BreastCancer
     },
-    {
-      path: '/backBaseinfo',
-      name: 'main',
-      meta: {
-        notCache: true
-      },
-      component: BackBaseinfo
-    },
+
     {
       path: '/backFamily',
       name: 'main',
