@@ -9,21 +9,21 @@
           </div>
         </div>
         <ul class="ys_tab">
-          <li><a href="/#/sysCommon">{{$t('sysReportTemplate.common')}}</a></li>
-          <li><a href="/#/sysCheckImage">{{$t('sysReportTemplate.checkImage')}}</a></li>
-          <li><a href="/#/sysFocusDescribe">{{$t('sysReportTemplate.focusDescribe')}}</a></li>
-          <li><a href="/#/sysReport">{{$t('sysReportTemplate.report')}}</a></li>
+          <li><router-link to="/sysCommon">{{$t('sysReportTemplate.common')}}</router-link></li>
+          <li><router-link to="/sysCheckImage">{{$t('sysReportTemplate.checkImage')}}</router-link></li>
+          <li><router-link to="/sysFocusDescribe">{{$t('sysReportTemplate.focusDescribe')}}</router-link></li>
+          <li><router-link to="/sysReport">{{$t('sysReportTemplate.report')}}</router-link></li>
           <li class="on">{{$t('sysReportTemplate.reportTemplate')}}</li>
         </ul>
         <div class="y_template">
           <i>{{$t('sysReportTemplate.reportTemplate')}}</i>
           <ul>
-            <li class="on">
+            <li @click="selTemplate(1)" v-bind:class="{'on': tV1}">
               <h1>{{$t('sysReportTemplate.template1')}}</h1>
               <h4>{{$t('sysReportTemplate.template1Des')}}</h4>
               <b>预览</b>
             </li>
-            <li>
+            <li @click="selTemplate(2)" v-bind:class="{'on': tV2}">
               <h1>{{$t('sysReportTemplate.template2')}}</h1>
               <h4>{{$t('sysReportTemplate.template2Des')}}</h4>
               <b>预览</b>
@@ -45,11 +45,23 @@ export default {
   name: 'SysReportTemplate',
   data () {
     return {
-
+      tV1: true,
+      tV2: false
     }
   },
   components: {
     leftMenu
+  },
+  methods: {
+    selTemplate (num) {
+      if (num === 1) {
+        this.tV1 = true
+        this.tV2 = false
+      } else {
+        this.tV1 = false
+        this.tV2 = true
+      }
+    }
   }
 }
 </script>

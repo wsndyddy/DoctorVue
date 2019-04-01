@@ -63,7 +63,6 @@ export default {
     bread: '操作手册',
     btn: '返回'
   },
-  
   backDrugs: {
     title: '用药手术史',
     family: '家族史：一级亲属（父亲/母亲/儿子/女儿/兄弟姐妹）是否患有乳腺瘤？',
@@ -263,7 +262,7 @@ export default {
     accountManagement: '账户管理',
     modifyPhoto: '修改头像',
     welcome: '您好，',
-    tipLogin: '提示：登录@num次',
+    tipLogin: '提示：登录',
     tipTime: '最近登录时间 ',
     organization: '机构',
     department: '科室',
@@ -363,6 +362,32 @@ export default {
     bread: '操作手册',
     btn: '返回'
   },
+  sysReport: {
+    title: '系统设置',
+    common: '通用',
+    checkImage: '检查图像',
+    focusDescribe: '病灶描述',
+    report: '报告',
+    reportTemplate: '报告模板',
+    impression: '印象诊断',
+    impressionTip: '印象诊断，不得超过20个字符',
+    itLable1: '呈浅蓝色',
+    suggestion: '复查建议',
+    suggestionTip: '复查建议标题，不得超过20个字符',
+    stLable1: '呈浅蓝色'
+  },
+  sysReportTemplate: {
+    title: '系统设置',
+    common: '通用',
+    checkImage: '检查图像',
+    focusDescribe: '病灶描述',
+    report: '报告',
+    reportTemplate: '报告模板',
+    template1: '模板一',
+    template1Des: '该模板适用于快速生成报告，完整的显示病灶内容信息',
+    template2: '模板二',
+    template2Des: '该模板适用于快速生成报告，完整的显示病灶内容信息'
+  },
   leftMenu: {
     menu1: '待检',
     menu2: '已检',
@@ -415,7 +440,17 @@ export default {
     btn_ok: '确定',
     btn_cancel: '取消',
     btn_saveprint: '保存并打印',
-    btn_saveshow: '保存并预览'
+    btn_saveshow: '保存并预览',
+    btn_prevStep: '上一步',
+    btn_nextStep: '下一步',
+    btn_modify: '修改',
+    btn_submit: '提交',
+    btn_return: '返回',
+    btn_default: '默认',
+    btn_Redefault: '恢复默认',
+    btn_UploadImage: '上传图片',
+    btn_addPrint: '添加打印机',
+    btn_printTest: '打印测试'
   },
   report: {
     name: '姓名',
@@ -570,5 +605,36 @@ export default {
     two_side: '双侧',
     not_show_others: '否',
     show_others: '是'
+  },
+  units: {
+    year: '年',
+    month: '月',
+    day: '日',
+    hour: '时',
+    minute: '分',
+    second: '秒',
+    frequency: '次',
+    meter: '米',
+    centimeter: '厘米',
+    millimeter: '毫米',
+    kilometer: '公里',
+    page: '页',
+    bag: '袋',
+    piece: '件',
+    bale: '包',
+    bottle: '瓶',
+    dozen: '打',
+    sheet: '张',
+    box: '箱',
+    frum: '桶',
+    strand: '股',
+    lot: '批',
+    unit: '辆',
+    case: '套',
+    coil: '圈',
+    set: '台',
+    pair: '双',
+    rolls: '卷',
+    celsius: '度'
   }
 }

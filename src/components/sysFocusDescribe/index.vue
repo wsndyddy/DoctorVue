@@ -9,11 +9,11 @@
           </div>
         </div>
         <ul class="ys_tab">
-          <li><a href="/#/sysCommon">{{$t('sysFocusDescribe.common')}}</a></li>
-          <li><a href="/#/sysCheckImage">{{$t('sysFocusDescribe.checkImage')}}</a></li>
+          <li><router-link to="/sysCommon">{{$t('sysFocusDescribe.common')}}</router-link></li>
+          <li><router-link to="/sysCheckImage">{{$t('sysFocusDescribe.checkImage')}}</router-link></li>
           <li class="on">{{$t('sysFocusDescribe.focusDescribe')}}</li>
-          <li><a href="/#/sysReport">{{$t('sysFocusDescribe.report')}}</a></li>
-          <li><a href="/#/sysReportTemplate">{{$t('sysFocusDescribe.reportTemplate')}}</a></li>
+          <li><router-link to="/sysReport">{{$t('sysFocusDescribe.report')}}</router-link></li>
+          <li><router-link to="/sysReportTemplate">{{$t('sysFocusDescribe.reportTemplate')}}</router-link></li>
         </ul>
         <div>
           <div class="yk_top">

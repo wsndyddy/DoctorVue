@@ -19,7 +19,7 @@
         <div class="clearfix">
           <div class="uc_sider">
             <ul>
-              <li><a href="/#/PersonalSetup">{{$t('personalCenter.accountSettings')}}</a></li>
+              <li><router-link to="/PersonalSetup">{{$t('personalCenter.accountSettings')}}</router-link></li>
               <li class="on">{{$t('personalCenter.accountManagement')}}</li>
             </ul>
           </div>

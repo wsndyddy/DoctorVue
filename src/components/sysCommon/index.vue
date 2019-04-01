@@ -10,10 +10,10 @@
         </div>
         <ul class="ys_tab">
           <li class="on">{{$t('sysCommon.common')}}</li>
-          <li><a href="/#/sysCheckImage">{{$t('sysCommon.checkImage')}}</a></li>
-          <li><a href="/#/sysFocusDescribe">{{$t('sysCommon.focusDescribe')}}</a></li>
-          <li><a href="/#/sysReport">{{$t('sysCommon.report')}}</a></li>
-          <li><a href="/#/sysReportTemplate">{{$t('sysCommon.reportTemplate')}}</a></li>
+          <li><router-link to="/sysCheckImage">{{$t('sysCommon.checkImage')}}</router-link></li>
+          <li><router-link to="/sysFocusDescribe">{{$t('sysCommon.focusDescribe')}}</router-link></li>
+          <li><router-link to="/sysReport">{{$t('sysCommon.report')}}</router-link></li>
+          <li><router-link to="/sysReportTemplate">{{$t('sysCommon.reportTemplate')}}</router-link></li>
         </ul>
         <div class="ys_form">
           <dl>
