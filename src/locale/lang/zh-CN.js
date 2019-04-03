@@ -59,10 +59,6 @@ export default {
       day: '天'
     }
   },
-  help: {
-    bread: '操作手册',
-    btn: '返回'
-  },
   backDrugs: {
     title: '用药手术史',
     family: '家族史：一级亲属（父亲/母亲/儿子/女儿/兄弟姐妹）是否患有乳腺瘤？',
@@ -236,6 +232,15 @@ export default {
     menu42: '4.2 比如比如',
     menu43: '4.3 比如比如'
   },
+  personalManage: {
+    tabID: '序号',
+    tabName: '姓名',
+    tabSex: '性别',
+    tabPhone: '手机',
+    tabAuthority: '权限',
+    tabState: '状态',
+    tabOperation: '操作'
+  },
   personalCenter: {
     title: '个人中心',
     logout: '退出登录',
@@ -251,13 +256,23 @@ export default {
     tel: '电话',
     name: '姓名',
     sex: '性别',
+    woman: '女',
+    man: '男',
     birthday: '生日',
     phone: '手机',
     mail: '邮箱',
     wechat: '微信ID',
     account: '账号',
     password: '密码',
-    confirm: '确认密码'
+    confirm: '确认密码',
+    nameTip: '请输入姓名',
+    birthdayTip: '请输入您的生日 例：1990/01/01',
+    phoneTip: '请输入手机号码',
+    mailTip: '请输入邮箱',
+    wechatTip: '请输入您的微信帐户',
+    accountTip: '请输入您的本系统登录帐户',
+    passwordTip: '请输入新密码',
+    confirmTip: '请再次输入新密码'
   },
   template: {
     viewreport: '查看完整报告',
@@ -304,7 +319,7 @@ export default {
     itemLogoTip: 'LOGO用于项目名称图片显示；提示：不得超过200kb图片，不支持png格式',
     language: '语言',
     languageChinese: '中文',
-    languageEnglish: '英语',
+    languageEnglish: 'English',
     languageTip: '用于设置系统显示语言',
     print: '打印',
     printTip: '添加并设置默认打印机'
@@ -336,7 +351,7 @@ export default {
     d2dTip: '2D描述标签，不得超过20个字符',
     d2dLabel1: '呈浅蓝色',
     describe3d: '3D描述',
-    d3dTip: '2D描述标签，不得超过20个字符',
+    d3dTip: '3D描述标签，不得超过20个字符',
     d3dLabel1: '呈浅蓝色'
   },
   help: {
@@ -355,6 +370,7 @@ export default {
     itLable1: '呈浅蓝色',
     suggestion: '复查建议',
     suggestionTip: '复查建议标题，不得超过20个字符',
+    suggestionDes: '复查建议描述',
     stLable1: '呈浅蓝色'
   },
   sysReportTemplate: {
@@ -431,7 +447,8 @@ export default {
     btn_Redefault: '恢复默认',
     btn_UploadImage: '上传图片',
     btn_addPrint: '添加打印机',
-    btn_printTest: '打印测试'
+    btn_printTest: '打印测试',
+    btn_add2: '添加'
   },
   report: {
     name: '姓名',

@@ -9,10 +9,10 @@
             <dd>{{$t('personalCenter.modifyPhoto')}}</dd>
           </dl>
           <div class="uc_info">
-            <div class="uc_name">{{$t('personalCenter.welcome')}}张晓华</div>
+            <div class="uc_name">{{$t('personalCenter.welcome')}}{{ accArr.name }}</div>
             <div class="uc_tips">
-              <i>{{$t('personalCenter.tipLogin')}}38{{$t('units.frequency')}}，{{$t('personalCenter.tipTime')}} 2019-1-19 12:23:21</i>
-              <u>{{$t('personalCenter.logout')}}</u>
+              <i>{{$t('personalCenter.tipLogin')}}{{ accArr.frequency }}{{$t('units.frequency')}}，{{$t('personalCenter.tipTime')}}{{ accArr.logintime }}</i>
+              <u @click="logout()">{{$t('personalCenter.logout')}}</u>
             </div>
           </div>
         </div>
@@ -25,27 +25,27 @@
           </div>
           <div class="uc_main">
             <div class="uc_form">
-              <dl><dt>{{$t('personalCenter.organization')}}</dt><dd><i>北京长安医院</i></dd></dl>
-              <dl><dt>{{$t('personalCenter.department')}}</dt><dd><i>乳腺科</i></dd></dl>
-              <dl><dt>{{$t('personalCenter.address')}}</dt><dd><i>背景是朝阳区大望路88号长安医院</i></dd></dl>
-              <dl><dt>{{$t('personalCenter.tel')}}</dt><dd><i>010-12345678</i></dd></dl>
-              <dl><dt>{{$t('personalCenter.name')}}</dt><dd><input class="uc_input" type="text" value="张晓华" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.organization')}}</dt><dd><i>{{ accArr.organization }}</i></dd></dl>
+              <dl><dt>{{$t('personalCenter.department')}}</dt><dd><i>{{ accArr.department }}</i></dd></dl>
+              <dl><dt>{{$t('personalCenter.address')}}</dt><dd><i>{{ accArr.address }}</i></dd></dl>
+              <dl><dt>{{$t('personalCenter.tel')}}</dt><dd><i>{{ accArr.tel }}</i></dd></dl>
+              <dl><dt>{{$t('personalCenter.name')}}</dt><dd><input class="uc_input" type="text" v-model="accArr.name" /></dd></dl>
               <dl>
                 <dt>{{$t('personalCenter.sex')}}</dt>
                 <dd>
                   <ul class="uc_diyselect">
-                    <li>男</li>
-                    <li class="selected">女</li>
+                    <li @click="selSex(sexArr[0].name)" v-bind:class="{'selected': sexArr[0].default}">{{$t('personalCenter.man')}}</li>
+                    <li @click="selSex(sexArr[1].name)" v-bind:class="{'selected': sexArr[1].default}">{{$t('personalCenter.woman')}}</li>
                   </ul>
                 </dd>
               </dl>
-              <dl><dt>{{$t('personalCenter.birthday')}}</dt><dd><input class="uc_input" type="text" value="0000/00/00" /></dd></dl>
-              <dl><dt>{{$t('personalCenter.phone')}}</dt><dd><input class="uc_input" type="text" placeholder="请输入手机号码" /></dd></dl>
-              <dl><dt>{{$t('personalCenter.mail')}}</dt><dd><input class="uc_input" type="text" placeholder="请输入邮箱" /></dd></dl>
-              <dl><dt>{{$t('personalCenter.wechat')}}</dt><dd><input class="uc_input" type="text" value="23423423442" /></dd></dl>
-              <dl><dt>{{$t('personalCenter.account')}}</dt><dd><input class="uc_input" type="text" value="xiaohua01" /></dd></dl>
-              <dl><dt>{{$t('personalCenter.password')}}</dt><dd><input class="uc_input" type="password" placeholder="请输入新密码" /></dd></dl>
-              <dl><dt>{{$t('personalCenter.confirm')}}</dt><dd><input class="uc_input" type="password" placeholder="请再次输入新密码" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.birthday')}}</dt><dd><input class="uc_input" type="text" v-model="accArr.birthday" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.phone')}}</dt><dd><input class="uc_input" type="text" :placeholder="$t('personalCenter.phoneTip')" v-model="accArr.phone" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.mail')}}</dt><dd><input class="uc_input" type="text" :placeholder="$t('personalCenter.mailTip')" v-model="accArr.mail" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.wechat')}}</dt><dd><input class="uc_input" type="text" :placeholder="$t('personalCenter.wechatTip')" v-model="accArr.wechat" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.account')}}</dt><dd><input class="uc_input" type="text" :placeholder="$t('personalCenter.accountTip')" v-model="accArr.account" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.password')}}</dt><dd><input class="uc_input" type="password" :placeholder="$t('personalCenter.passwordTip')" v-model="accArr.password" /></dd></dl>
+              <dl><dt>{{$t('personalCenter.confirm')}}</dt><dd><input class="uc_input" type="password" :placeholder="$t('personalCenter.confirmTip')" v-model="accArr.confirm" /></dd></dl>
             </div>
             <div class="ucbtn_box">
               <i-button class="ybtn ybtn_dark">{{$t('btnBar.btn_modify')}}</i-button>
@@ -63,11 +63,49 @@ export default {
   name: 'PersonalSetup',
   data () {
     return {
-
+      accArr: {
+        name: '张晓华',
+        frequency: '21',
+        logintime: '2019-3-19 12:23:21',
+        organization: '北京长安医院',
+        department: '乳腺科',
+        address: '朝阳区大望路88号长安医院',
+        tel: '010-12345678',
+        sex: '女',
+        birthday: '1980/08/08',
+        phone: '13919800808',
+        mail: 'zxh@163.com',
+        wechat: '13919800808',
+        account: 'zhangxiaohua',
+        password: '123456',
+        confirm: '123456'
+      },
+      sexArr: [{
+        name: '男',
+        default: false
+      }, {
+        name: '女',
+        default: false
+      }]
     }
   },
   components: {
     leftMenu
+  },
+  methods: {
+    selSex (s) {
+      this.sexArr.forEach((e) => {
+        if (e.name === s) {
+          e.default = true
+        } else { e.default = false }
+      })
+    },
+    logout () {
+      // 退出登录过程
+    }
+  },
+  created() {
+    this.selSex(this.accArr.sex)
   }
 }
 </script>

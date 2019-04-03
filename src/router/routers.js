@@ -53,7 +53,7 @@ const routerConfig = new Router({
     },
     {
       path: '/help',
-      name: 'main',
+      name: 'help',
       meta: {
         notCache: true
       },
@@ -61,7 +61,7 @@ const routerConfig = new Router({
     },
     {
       path: '/breastCancer',
-      name: 'main',
+      name: 'breastcancer',
       meta: {
         notCache: true
       },
@@ -70,7 +70,7 @@ const routerConfig = new Router({
 
     {
       path: '/backFamily',
-      name: 'main',
+      name: 'backfamily',
       meta: {
         notCache: true
       },
@@ -78,7 +78,7 @@ const routerConfig = new Router({
     },
     {
       path: '/backHabits',
-      name: 'main',
+      name: 'backhabits',
       meta: {
         notCache: true
       },
@@ -86,7 +86,7 @@ const routerConfig = new Router({
     },
     {
       path: '/backDrugs',
-      name: 'main',
+      name: 'backdrugs',
       meta: {
         notCache: true
       },
@@ -94,7 +94,7 @@ const routerConfig = new Router({
     },
     {
       path: '/templateV2',
-      name: 'main',
+      name: 'templatev2',
       meta: {
         notCache: true
       },
@@ -102,7 +102,7 @@ const routerConfig = new Router({
     },
     {
       path: '/templateV1',
-      name: 'main',
+      name: 'templatev1',
       meta: {
         notCache: true
       },
@@ -110,7 +110,7 @@ const routerConfig = new Router({
     },
     {
       path: '/personalManage',
-      name: 'main',
+      name: 'personalmanage',
       meta: {
         notCache: true
       },
@@ -118,7 +118,7 @@ const routerConfig = new Router({
     },
     {
       path: '/personalSetup',
-      name: 'main',
+      name: 'personalsetup',
       meta: {
         notCache: true
       },
@@ -126,7 +126,7 @@ const routerConfig = new Router({
     },
     {
       path: '/sysReport',
-      name: 'main',
+      name: 'sysreport',
       meta: {
         notCache: true
       },
@@ -134,7 +134,7 @@ const routerConfig = new Router({
     },
     {
       path: '/sysReportTemplate',
-      name: 'main',
+      name: 'sysreporttemplate',
       meta: {
         notCache: true
       },
@@ -142,7 +142,7 @@ const routerConfig = new Router({
     },
     {
       path: '/sysFocusDescribe',
-      name: 'main',
+      name: 'sysfocusdescribe',
       meta: {
         notCache: true
       },
@@ -150,7 +150,7 @@ const routerConfig = new Router({
     },
     {
       path: '/sysCheckImage',
-      name: 'main',
+      name: 'syscheckimage',
       meta: {
         notCache: true
       },
@@ -158,19 +158,11 @@ const routerConfig = new Router({
     },
     {
       path: '/sysCommon',
-      name: 'main',
+      name: 'syscommon',
       meta: {
         notCache: true
       },
       component: SysCommon
-    },
-    {
-      path: '/help',
-      name: 'main',
-      meta: {
-        notCache: true
-      },
-      component: help
     },
     {
       path: '/',

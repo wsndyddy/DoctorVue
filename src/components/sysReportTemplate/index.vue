@@ -18,21 +18,16 @@
         <div class="y_template">
           <i>{{$t('sysReportTemplate.reportTemplate')}}</i>
           <ul>
-            <li @click="selTemplate(1)" v-bind:class="{'on': tV1}">
-              <h1>{{$t('sysReportTemplate.template1')}}</h1>
-              <h4>{{$t('sysReportTemplate.template1Des')}}</h4>
-              <b>预览</b>
-            </li>
-            <li @click="selTemplate(2)" v-bind:class="{'on': tV2}">
-              <h1>{{$t('sysReportTemplate.template2')}}</h1>
-              <h4>{{$t('sysReportTemplate.template2Des')}}</h4>
-              <b>预览</b>
+            <li v-for="(items, index) in templateArr" :key="index" @click="selTemplate(index)" v-bind:class="{'on': items.default}">
+              <h1>{{ items.title }}</h1>
+              <h4>{{ items.desc }}</h4>
+              <b><router-link :to="items.preview">预览</router-link></b>
             </li>
           </ul>
         </div>
         <div class="ybtn_box_special">
           <i-button class="ybtn ybtn_dark">{{$t('btnBar.btn_save')}}</i-button>
-          <i-button class="ybtn ybtn_light">{{$t('btnBar.btn_Redefault')}}</i-button>
+          <i-button class="ybtn ybtn_light" @click="selTemplate(defTemplate)">{{$t('btnBar.btn_Redefault')}}</i-button>
         </div>
       </div>
     </div>
@@ -45,23 +40,32 @@ export default {
   name: 'SysReportTemplate',
   data () {
     return {
-      tV1: true,
-      tV2: false
+      // *报告模板 选择数据绑定，标题/描述/默认选中/预览地址
+      templateArr: [{
+        title: '模板一',
+        desc: '该模板适用于快速生成报告，完整的显示病灶内容信息1',
+        default: true,
+        preview: 'http://www.xtkq.com/'
+      }, {
+        title: '模板二',
+        desc: '该模板适用于快速生成报告，完整的显示病灶内容信息2',
+        default: false,
+        preview: 'http://www.xtkq.com/'
+      }],
+      defTemplate: 0
     }
   },
   components: {
     leftMenu
   },
   methods: {
-    selTemplate (num) {
-      if (num === 1) {
-        this.tV1 = true
-        this.tV2 = false
-      } else {
-        this.tV1 = false
-        this.tV2 = true
-      }
+    selTemplate (n) {
+      this.templateArr.forEach((e) => { e.default = false })
+      this.templateArr[n].default = true
     }
+  },
+  created () {
+    this.templateArr.forEach((item, index, arr) => { if (item.default) this.defTemplate = index })
   }
 }
 </script>
