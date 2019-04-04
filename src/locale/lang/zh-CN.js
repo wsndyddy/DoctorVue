@@ -142,9 +142,11 @@ export default {
     noSmoking: '戒烟',
     stopDrinking: '戒酒',
     drinking: '饮酒',
-    drinkingYes: '无',
-    drinkingNo: '有',
-    drinkingQuit: '已戒',
+    drinkStatus: {
+      status1: '无',
+      status2: '有',
+      status3: '已戒'
+    },
     health: '保健品',
     health_q1: '丰乳产品',
     health_q2: '减肥产品',

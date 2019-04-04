@@ -11,19 +11,19 @@
         <div class="ylist_square">
           <dl class="col_half">
             <dt>{{$t('baseinfo.marriageStatus.title')}}</dt>
-            <radio :labelarr="marriage"></radio>
+            <radio :labelarr="marriage" :radioIndex="1" v-on:getVal="getRadio"></radio>
           </dl>
           <dl class="col_half">
             <dt>{{$t('baseinfo.marriageHistory.title')}}</dt>
-            <radio :labelarr="marriageHistory"></radio>
+            <radio :labelarr="marriageHistory" :radioIndex="2" v-on:getVal="getRadio"></radio>
           </dl>
           <dl>
             <dt>{{$t('baseinfo.culture.title')}}</dt>
-            <radio :labelarr="culture"></radio>
+            <radio :labelarr="culture" :radioIndex="3" v-on:getVal="getRadio"></radio>
           </dl>
           <dl>
             <dt>{{$t('baseinfo.occupation.title')}}</dt>
-            <radio :labelarr="occupation"></radio>
+            <radio :labelarr="occupation" :radioIndex="4" v-on:getVal="getRadio"></radio>
           </dl>
         </div>
         <div class="ylist_optionbox">
@@ -72,8 +72,8 @@
 
 <script>
 import leftMenu from '../leftMenu'
-import radio from '@/components/baseinfo/radio'
-import incretInput from '@/components/baseinfo/incretInput'
+import radio from '@/component/_base-radio'
+import incretInput from '@/component/incretInput'
 import { get } from '@/libs/util'
 export default {
   name: 'bginfo',
@@ -225,6 +225,9 @@ export default {
     this.getYearMonthDay()
   },
   methods: {
+    getRadio (index, val) { // 获取radio的值
+
+    },
     judegeBigMonth () {
       let arr = [1, 3, 5, 7, 9]
       let that = this

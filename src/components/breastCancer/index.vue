@@ -85,7 +85,7 @@
 
 <script>
 import leftMenu from '../leftMenu'
-import radio from '@/components/breastCancer/singleRadio'
+import radio from '@/component/_base-radio'
 import { get } from '@/libs/util'
 export default {
   name: 'breastCancer',
